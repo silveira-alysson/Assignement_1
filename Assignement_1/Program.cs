@@ -9,7 +9,7 @@ namespace Assignment1_F19
             int a = 1, b = 22;
             printSelfDividingNumbers(a, b);
 
-            int n2 = 15;
+            int n2 = 5;
             printSeries(n2);
 
             int n3 = 5;
@@ -35,7 +35,8 @@ namespace Assignment1_F19
                 Console.WriteLine("The self dividing numbers are:");
                 int i = x;
                 int[] SelfDN = new int[y];
-                
+
+
                     while ((i >= x) && (i <= y))
                     {
                     string digit_string = i.ToString();
@@ -70,12 +71,14 @@ namespace Assignment1_F19
                     i++;
                     } // end of the first loop        
 
-                    
                     foreach (int z in SelfDN)
                     {
                     if (z != 0)
+                        {
                         Console.WriteLine(z);
-                   
+                        }
+
+
                     }
                 Console.WriteLine("\n");
             } // end of try
@@ -90,6 +93,7 @@ namespace Assignment1_F19
         {
             try
             {
+                Console.WriteLine("Your desired series is:");
                 int[] alfa = new int[] { };
 
                 for (int i = 1; i <= n; i++)
@@ -126,6 +130,7 @@ namespace Assignment1_F19
 
         public static void printTriangle(int n)
         {
+            Console.WriteLine("Look at this beatiful inverted triangle:");
             try
             {
 
@@ -172,6 +177,7 @@ namespace Assignment1_F19
         {
             int count = 0;
 
+            Console.WriteLine("You have the following number of jewels:");
             try
             {
                 int elements = S.GetLength(0);
@@ -200,6 +206,7 @@ namespace Assignment1_F19
             return count;
         }
 
+
         public static int[] getLargestCommonSubArray(int[] a, int[] b)
         {
             try
@@ -214,16 +221,18 @@ namespace Assignment1_F19
                     foreach (int j in b)
                     {
                         int x = 1;
-                            if (j == i)
-                            {
-                               Array.Resize(ref z, x);
-                                z.SetValue(j, x-1);
-                                x++;
-                            }
-                            else
-                            {
-                                Array.Clear(z, 0, count_z);
-                            }
+                        if (j == i)
+                        {
+                            Array.Resize(ref z, x);
+                            z.SetValue(j, x - 1);
+                            x++;
+                           
+                        }
+                        else
+                        {
+                            Array.Clear(z, 0, count_z);
+                         
+                        }
 
 
                         count_z = z.GetLength(0);
@@ -233,7 +242,7 @@ namespace Assignment1_F19
                             Array.Resize(ref alfa, count_z);
                             alfa = z;
                         }
-                            
+
 
                     }
                 }
@@ -245,7 +254,6 @@ namespace Assignment1_F19
 
             return null; // return the actual array
         }
-
         public static void solvePuzzle()
         {
             try
@@ -261,3 +269,4 @@ namespace Assignment1_F19
     }
 }
 
+//final version
